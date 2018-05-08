@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HighestCardGame.iml" filepath="$PROJECT_DIR$/.idea/modules/HighestCardGame.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HighestCardGame_main.iml" filepath="$PROJECT_DIR$/.idea/modules/HighestCardGame_main.iml" group="HighestCardGame" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HighestCardGame_test.iml" filepath="$PROJECT_DIR$/.idea/modules/HighestCardGame_test.iml" group="HighestCardGame" />
+    </modules>
+  </component>
+</project>
