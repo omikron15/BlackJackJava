@@ -1,8 +1,10 @@
+import java.util.Scanner;
+
 public class Runner {
 
-
-
     public static void main(String[] args) {
+
+        Scanner input = new Scanner( System.in );
 
         Game game1;
         Deck deck1;
@@ -25,7 +27,24 @@ public class Runner {
         game1.addPlayer(player1);
         game1.addPlayer(player2);
 
-        game1.playBlackJack();
-    }
+        boolean finished = false;
 
+        while (!finished) {
+
+            System.out.println("Welcome to the Game:");
+            System.out.println("Please select '1' for BlackJack");
+            System.out.println("Please select '2' for Highcard");
+            System.out.println("Enter any number to quit");
+            int gameSelection;
+            gameSelection = (input.nextInt());
+            if (gameSelection == 1) {
+                game1.playBlackJack();
+            } else if (gameSelection == 2) {
+                game1.playHighCard();
+            } else {
+                System.out.println("Game Over");
+                return;
+            }
+        }
+    }
 }

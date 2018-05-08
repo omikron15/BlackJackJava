@@ -18,5 +18,10 @@ public class Dealer extends Player {
         }
     }
 
+    public void dealCard(Player player, Deck deck){
+        Card newPlayerCard = deck.giveCard();
+        player.getCard(newPlayerCard);
+    }
+
 
 }

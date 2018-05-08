@@ -32,6 +32,17 @@ public class Player {
         return false;
     }
 
+    public int acesInHand(){
+        int total = 0;
+        for (Card card : hand){
+            if (card.getRank() == Rank.ACE) {
+                total += 1;
+            }
+        }
+        return total;
+
+    }
+
     public int handTotal(){
         int total = 0;
 
@@ -42,7 +53,7 @@ public class Player {
         return total;
     }
 
-    public int BlackJackHandTotal(){
+    public int blackJackHandTotal(){
         int total = 0;
 
         for (Card card : this.hand){
@@ -58,10 +69,16 @@ public class Player {
         return total;
     }
 
-    public boolean checkForBlackJack(){
+    public boolean isBust(){
+        return (blackJackHandTotal() > 21);
 
-        return (BlackJackHandTotal() == 21);
 
     }
+
+    public boolean checkForBlackJack(){
+        return (blackJackHandTotal() == 21);
+    }
+
+
 
 }
