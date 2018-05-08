@@ -31,4 +31,10 @@ public class Deck {
     public Card giveCard(){
         return this.cards.remove(0);
     }
+
+    public void resetDeck(){
+        cards.clear();
+        populateDeck();
+        shuffleDeck();
+    }
 }

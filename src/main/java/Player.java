@@ -40,7 +40,6 @@ public class Player {
             }
         }
         return total;
-
     }
 
     public int handTotal(){
@@ -64,19 +63,25 @@ public class Player {
             }
         }
         if ((total > 21)&(checkForAce())){
-            total -= 10;
+            int aceCount = acesInHand();
+
+            while ((total > 21)&(aceCount > 0)) {
+                total -= 10;
+            }
         }
         return total;
     }
 
     public boolean isBust(){
         return (blackJackHandTotal() > 21);
-
-
     }
 
     public boolean checkForBlackJack(){
         return (blackJackHandTotal() == 21);
+    }
+
+    public void clearHand(){
+        this.hand.clear();
     }
 
 

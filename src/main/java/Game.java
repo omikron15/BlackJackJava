@@ -27,16 +27,46 @@ public class Game {
         this.players.add(newPlayer);
     }
 
-    public void playBlackJack(){
+    public void displayPlayers(){
+        if (playerCount() == 0){
+            System.out.println("No players are currently in the game");
+            System.out.println();
+            return;
+        }
 
+        for (Player player : this.players){
+            System.out.println(player.getName());
+        }
+    }
+
+    public void resetDeck(){
+        this.deck.resetDeck();
+    }
+
+    public void clearPlayerHands(){
+        for(Player player : this.players){
+            player.clearHand();
+        }
+    }
+
+    public void playBlackJack(){
+        if(players.size() < 1){
+            System.out.println("Minimum 1 player required for blackjack");
+            System.out.println();
+            return;
+        }
+        resetDeck();
+        clearPlayerHands();
         dealer.dealCards(2, players, deck);
-        dealer.handTotal();
+//        dealer.handTotal();
         BlackJack();
 
     }
 
     public void BlackJack(){
+
         System.out.println("BlackJack Game:");
+        System.out.println();
         for (String result : BlackJackLogic()){
             System.out.println(result);
         }
@@ -70,12 +100,12 @@ public class Game {
             if (player.isBust()) {
                 results.add(player.getName() + " is bust, Dealer wins");
             } else if (dealer.isBust()) {
-                results.add(player.getName()+ " with " + player.handTotal() + " beats the dealer who is bust");
+                results.add(player.getName()+ " with " + player.blackJackHandTotal() + " beats the dealer who is bust");
             }else{
                 if (player.handTotal() > dealer.handTotal()) {
-                    results.add(player.getName() + " with " + player.handTotal() + " beats the dealer with " + dealer.handTotal());
+                    results.add(player.getName() + " with " + player.blackJackHandTotal() + " beats the dealer with " + dealer.blackJackHandTotal());
                 } else {
-                    results.add("Dealer with " + dealer.handTotal() + " beats " + player.getName() + " with " + player.handTotal());
+                    results.add("Dealer with " + dealer.blackJackHandTotal() + " beats " + player.getName() + " with " + player.blackJackHandTotal());
                 }
             }
         }
@@ -114,6 +144,7 @@ public class Game {
             user_input = input.next();
             user_input = user_input.toLowerCase();
             if (user_input.equals("stick")){
+                System.out.println();
                 return;
             }else if (user_input.equals("hit")){
                 dealer.dealCard(player, deck);
@@ -152,14 +183,25 @@ public class Game {
         return results;
     }
 
-    public String playHighCard(){
+    public void playHighCard(){
+
+        if(players.size() < 2){
+            System.out.println("Minimum 2 player required for High Card");
+            System.out.println();
+            return;
+        }
+
+        resetDeck();
+        clearPlayerHands();
+        dealer.dealCards(2, players, deck);
 
         ArrayList<Player> results = getHighCardResults();
 
         if (results.size() > 1) {
-            return "Its a draw";
+            System.out.println( "Its a draw");
+            return;
         }
-        return results.get(0).getName() + " has won!";
+        System.out.println(results.get(0).getName() + " has won!");
 
     }
 
