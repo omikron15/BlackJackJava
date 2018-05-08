@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Player {
 
     private String name;
-    private ArrayList<Card> hand;
+    protected ArrayList<Card> hand;
 
     public Player(String name){
         this.name = name;
@@ -23,6 +23,15 @@ public class Player {
         this.hand.add(newCard);
     }
 
+    public boolean checkForAce(){
+        for (Card card : hand){
+            if (card.getRank() == Rank.ACE) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public int handTotal(){
         int total = 0;
 
@@ -31,6 +40,28 @@ public class Player {
         }
 
         return total;
+    }
+
+    public int BlackJackHandTotal(){
+        int total = 0;
+
+        for (Card card : this.hand){
+            if ((card.getValueFromEnum() >= 10)&(card.getRank() != Rank.ACE)){
+                total += 10;
+            } else {
+              total += card.getValueFromEnum();
+            }
+        }
+        if ((total > 21)&(checkForAce())){
+            total -= 10;
+        }
+        return total;
+    }
+
+    public boolean checkForBlackJack(){
+
+        return (BlackJackHandTotal() == 21);
+
     }
 
 }

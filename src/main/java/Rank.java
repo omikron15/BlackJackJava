@@ -2,7 +2,7 @@ import sun.jvm.hotspot.utilities.TwoOopHashtable;
 
 public enum Rank {
 
-    ACE(1),
+    ACE(11),
     Two(2),
     THREE(3),
     FOUR(4),
