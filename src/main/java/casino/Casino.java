@@ -28,4 +28,12 @@ public class Casino {
         return name;
     }
 
+    public int playerCount(){
+        return this.players.size();
+    }
+
+    public int gameCount(){
+        return this.games.size();
+    }
+
 }

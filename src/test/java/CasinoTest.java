@@ -24,6 +24,13 @@ public class CasinoTest {
         assertEquals("Connor's Casino", casino1.getName());
     }
 
+    @Test
+    public void getInitialGameCount() {
+        assertEquals(0, casino1.gameCount());
+    }
 
-
+    @Test
+    public void getInitialPlayerCount() {
+        assertEquals(0, casino1.playerCount());
+    }
 }
