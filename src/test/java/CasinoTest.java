@@ -52,5 +52,17 @@ public class CasinoTest {
         assertEquals(1, casino1.playerCount());
     }
 
+    @Test
+    public void removeGame() {
+        casino1.removeGame(game);
+        assertEquals(0, casino1.gameCount());
+    }
+
+    @Test
+    public void removePlayer() {
+        casino1.removePlayer(player);
+        assertEquals(0, casino1.playerCount());
+    }
+
 
 }

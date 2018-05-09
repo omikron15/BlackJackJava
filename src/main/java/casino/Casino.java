@@ -44,4 +44,13 @@ public class Casino {
         this.games.add(game);
     }
 
+    public void removePlayer(Player player){
+        this.players.remove(player);
+    }
+
+    public void removeGame(Game game){
+        this.players.remove(game);
+    }
+
+
 }
