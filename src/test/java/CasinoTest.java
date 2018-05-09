@@ -1,6 +1,7 @@
 import casino.Casino;
 import deck.Deck;
-import game.Game;
+import game.CardGame;
+import game.dealerGames.BlackJack;
 import org.junit.Before;
 import org.junit.Test;
 import player.Dealer;
@@ -13,15 +14,15 @@ public class CasinoTest {
     Casino casino1;
     Dealer dealer;
     Deck deck;
-    Game game;
+    BlackJack blackJackGame;
     Player player;
 
     @Before
-    public void setUp() throws Exception {
+    public void before() {
         dealer = new Dealer("Mr Dealer");
         deck = new Deck();
         casino1 = new Casino("Connor's Casino", dealer, deck);
-        game = new Game(deck, dealer);
+        blackJackGame = new BlackJack(deck, dealer);
         player = new Player("Player 1");
     }
 
@@ -42,7 +43,7 @@ public class CasinoTest {
 
     @Test
     public void addGame() {
-        casino1.addGame(game);
+        casino1.addGame(blackJackGame);
         assertEquals(1, casino1.gameCount());
     }
 
@@ -54,7 +55,7 @@ public class CasinoTest {
 
     @Test
     public void removeGame() {
-        casino1.removeGame(game);
+        casino1.removeGame(blackJackGame);
         assertEquals(0, casino1.gameCount());
     }
 

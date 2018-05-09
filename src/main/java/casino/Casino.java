@@ -1,7 +1,7 @@
 package casino;
 
 import deck.Deck;
-import game.Game;
+import game.CardGame;
 import game.Playable;
 import player.Dealer;
 import player.Player;
@@ -40,16 +40,16 @@ public class Casino {
         this.players.add(player);
     }
 
-    public void addGame(Game game){
-        this.games.add(game);
+    public void addGame(CardGame cardGame){
+        this.games.add(cardGame);
     }
 
     public void removePlayer(Player player){
         this.players.remove(player);
     }
 
-    public void removeGame(Game game){
-        this.players.remove(game);
+    public void removeGame(CardGame cardGame){
+        this.players.remove(cardGame);
     }
 
 
