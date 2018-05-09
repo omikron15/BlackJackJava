@@ -1,11 +1,13 @@
-package game.nonDealerGames;
+//Class possibly redundant but left in for the moment
 
-import deck.Deck;
-import game.CardGame;
-
-public abstract class NonDealerCardGame extends CardGame {
-
-    public NonDealerCardGame(Deck deck) {
-        super(deck);
-    }
-}
+//package game.nonDealerGames;
+//
+//import deck.Deck;
+//import game.CardGame;
+//
+//public abstract class NonDealerCardGame extends CardGame {
+//
+//    public NonDealerCardGame(Deck deck) {
+//        super(deck);
+//    }
+//}

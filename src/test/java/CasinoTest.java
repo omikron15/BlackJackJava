@@ -22,7 +22,7 @@ public class CasinoTest {
         dealer = new Dealer("Mr Dealer");
         deck = new Deck();
         casino1 = new Casino("Connor's Casino", dealer, deck);
-        blackJackGame = new BlackJack(deck, dealer);
+        blackJackGame = new BlackJack(deck);
         player = new Player("Player 1");
     }
 

@@ -1,18 +1,42 @@
-//import player.Dealer;
-//import deck.Deck;
-//import game.CardGame;
-//import player.Player;
-//
-//import java.util.Scanner;
-//
-//public class Runner {
-//
-//   static CardGame cardGame1;
-//   static Scanner input = new Scanner( System.in );
-//   static Deck deck1;
-//   static Dealer dealer1;
-//
-//    public static void main(String[] args) {
+import casino.Casino;
+import game.dealerGames.HighCard;
+import player.Dealer;
+import deck.Deck;
+import game.CardGame;
+import player.Player;
+
+import java.util.Scanner;
+
+public class Runner {
+
+   static CardGame cardGame1;
+   static Scanner input = new Scanner( System.in );
+
+//  New declaration after refactor
+   static Deck deck;
+   static Dealer dealer;
+   static Casino casino;
+   static Player player1;
+   static Player player2;
+   static HighCard highCard;
+
+
+    public static void main(String[] args) {
+        deck = new Deck();
+        dealer = new Dealer("Dealer");
+        casino = new Casino("Connor's Casino", dealer, deck);
+        player1 = new Player("Player 1");
+        player2 = new Player("Player 2");
+        highCard = new HighCard(deck);
+        casino.addPlayer(player1);
+        casino.addPlayer(player2);
+        casino.addGame(highCard);
+
+
+        casino.playGame(highCard);
+
+
+    }
 //
 //        deck1 = new Deck();
 //        dealer1 = new Dealer("DEALER");
@@ -87,4 +111,4 @@
 //    }
 //
 //
-//}
+}

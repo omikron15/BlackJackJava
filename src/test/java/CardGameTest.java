@@ -24,7 +24,7 @@ public class CardGameTest {
     public void before(){
         deck1 = new Deck();
         dealer1 = new Dealer("DEALER");
-        blackJackGame = new BlackJack(deck1, dealer1);
+        blackJackGame = new BlackJack(deck1);
         player1 = new Player("Connor");
         player2 = new Player("Andrew");
         player3 = new Player("Fraser");

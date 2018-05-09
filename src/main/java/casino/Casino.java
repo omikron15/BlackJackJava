@@ -3,6 +3,8 @@ package casino;
 import deck.Deck;
 import game.CardGame;
 import game.Playable;
+import game.dealerGames.BlackJack;
+import game.dealerGames.DealerCardGame;
 import player.Dealer;
 import player.Player;
 
@@ -50,6 +52,15 @@ public class Casino {
 
     public void removeGame(CardGame cardGame){
         this.players.remove(cardGame);
+    }
+
+    public void playGame(Playable playable){
+        ((CardGame) playable).addPlayers(players);
+
+        if (playable instanceof DealerCardGame){
+            ((DealerCardGame) playable).addDealer(dealer);
+        }
+        playable.play();
     }
 
 
