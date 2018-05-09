@@ -7,7 +7,7 @@ import player.Player;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Game {
+public class Game implements Playable {
 
     private Deck deck;
     private ArrayList<Player> players;

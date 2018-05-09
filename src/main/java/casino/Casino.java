@@ -36,4 +36,12 @@ public class Casino {
         return this.games.size();
     }
 
+    public void addPlayer(Player player){
+        this.players.add(player);
+    }
+
+    public void addGame(Game game){
+        this.games.add(game);
+    }
+
 }
