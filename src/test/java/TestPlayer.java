@@ -1,5 +1,9 @@
+import deck.Card;
+import deck.Rank;
+import deck.Suit;
 import org.junit.Before;
 import org.junit.Test;
+import player.Player;
 
 import static org.junit.Assert.assertEquals;
 
@@ -54,7 +58,7 @@ public class TestPlayer {
     public void blackJackHandTotal__21() {
         player1.getCard(card1);
         player1.getCard(card3);
-        assertEquals(21, player1.BlackJackHandTotal());
+        assertEquals(21, player1.blackJackHandTotal());
         assertEquals(true, player1.checkForBlackJack());
 
     }
@@ -63,7 +67,7 @@ public class TestPlayer {
     public void blackJackHandTotal__Not21() {
         player1.getCard(card1);
         player1.getCard(card2);
-        assertEquals(19, player1.BlackJackHandTotal());
+        assertEquals(19, player1.blackJackHandTotal());
         assertEquals(false, player1.checkForBlackJack());
 
     }

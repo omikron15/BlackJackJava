@@ -1,10 +1,12 @@
+import player.Dealer;
+import deck.Deck;
 import org.junit.Before;
 import org.junit.Test;
+import player.Player;
 
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 public class DealerTest {
 

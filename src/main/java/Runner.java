@@ -1,3 +1,8 @@
+import player.Dealer;
+import deck.Deck;
+import game.Game;
+import player.Player;
+
 import java.util.Scanner;
 
 public class Runner {
@@ -18,7 +23,7 @@ public class Runner {
 
         while (!finished) {
 
-            System.out.println("Welcome to the Game:");
+            System.out.println("Welcome to the game.Game:");
             System.out.println("Please select '1' for BlackJack");
             System.out.println("Please select '2' for Highcard");
             System.out.println("Please select '9' for players menu");
@@ -37,7 +42,7 @@ public class Runner {
 
             }
         }
-        System.out.println("Game Over");
+        System.out.println("game.Game Over");
     }
 
     //need to be static? why ?

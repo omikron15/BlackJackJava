@@ -1,3 +1,8 @@
+package player;
+
+import deck.Card;
+import deck.Rank;
+
 import java.util.ArrayList;
 
 public class Player {

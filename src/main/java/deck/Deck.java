@@ -1,3 +1,8 @@
+package deck;
+import deck.Card;
+import deck.Rank;
+import deck.Suit;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -14,7 +19,8 @@ public class Deck {
     private void populateDeck(){
         for(Suit suit : Suit.values()){
             for(Rank rank : Rank.values()){
-                Card card = new Card(suit, rank);
+                Card card;
+                card = new Card(suit, rank);
                 this.cards.add(card);
             }
         }

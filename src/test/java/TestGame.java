@@ -1,9 +1,12 @@
+import player.Dealer;
+import deck.Deck;
+import game.Game;
 import org.junit.Before;
 import org.junit.Test;
+import player.Player;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 
 public class TestGame {
 
@@ -60,7 +63,7 @@ public class TestGame {
 //        game1.addPlayer(player1);
 //        game1.addPlayer(player2);
 //        game1.dealCards(2);
-////      Player result = game1.getResults();
+////      player.Player result = game1.getResults();
 ////      System.out.println(result.getName());
 //        assertNotNull(game1.getResults());
 //    }

@@ -1,3 +1,5 @@
+package deck;
+
 import sun.jvm.hotspot.utilities.TwoOopHashtable;
 
 public enum Rank {

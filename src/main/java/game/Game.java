@@ -1,5 +1,10 @@
+package game;
+
+import deck.Deck;
+import player.Dealer;
+import player.Player;
+
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 import java.util.Scanner;
 
 public class Game {
@@ -65,7 +70,7 @@ public class Game {
 
     public void BlackJack(){
 
-        System.out.println("BlackJack Game:");
+        System.out.println("BlackJack game.Game:");
         System.out.println();
         for (String result : BlackJackLogic()){
             System.out.println(result);
@@ -76,7 +81,7 @@ public class Game {
         ArrayList<String> results = new ArrayList<>();
 
         if (dealer.checkForBlackJack()) {
-            results.add("Dealer has BlackJack, All players lose!");
+            results.add("player.Dealer has BlackJack, All players lose!");
             return results;
         } else {
             for (Player player : players){
@@ -98,14 +103,14 @@ public class Game {
         ArrayList<String> results = new ArrayList<>();
         for (Player player : players) {
             if (player.isBust()) {
-                results.add(player.getName() + " is bust, Dealer wins");
+                results.add(player.getName() + " is bust, player.Dealer wins");
             } else if (dealer.isBust()) {
                 results.add(player.getName()+ " with " + player.blackJackHandTotal() + " beats the dealer who is bust");
             }else{
-                if (player.handTotal() > dealer.handTotal()) {
+                if (player.blackJackHandTotal() > dealer.blackJackHandTotal()) {
                     results.add(player.getName() + " with " + player.blackJackHandTotal() + " beats the dealer with " + dealer.blackJackHandTotal());
                 } else {
-                    results.add("Dealer with " + dealer.blackJackHandTotal() + " beats " + player.getName() + " with " + player.blackJackHandTotal());
+                    results.add("player.Dealer with " + dealer.blackJackHandTotal() + " beats " + player.getName() + " with " + player.blackJackHandTotal());
                 }
             }
         }
@@ -186,7 +191,7 @@ public class Game {
     public void playHighCard(){
 
         if(players.size() < 2){
-            System.out.println("Minimum 2 player required for High Card");
+            System.out.println("Minimum 2 player required for High deck.Card");
             System.out.println();
             return;
         }

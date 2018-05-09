@@ -1,3 +1,5 @@
+package deck;
+
 public enum Suit {
 
         HEARTS,
