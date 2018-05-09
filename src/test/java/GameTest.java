@@ -8,7 +8,7 @@ import player.Player;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-public class TestGame {
+public class GameTest {
 
     Game game1;
     Deck deck1;

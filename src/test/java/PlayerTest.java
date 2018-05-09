@@ -7,7 +7,7 @@ import player.Player;
 
 import static org.junit.Assert.assertEquals;
 
-public class TestPlayer {
+public class PlayerTest {
 
     Player player1;
     Card card1;
