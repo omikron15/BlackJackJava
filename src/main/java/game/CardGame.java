@@ -12,8 +12,6 @@ public abstract class CardGame implements Playable {
     protected Deck deck;
     protected ArrayList<Player> players;
 
-
-
     public CardGame(Deck deck){
         this.deck = deck;
         this.players = new ArrayList<>();
